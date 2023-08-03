@@ -32,15 +32,15 @@ describe('Invalid credentials - password & email combination', () => {
 
   })
   //Missing values - user forgot to provide one of credentials
-  //Skipping due to unability to verify native prompt
-  // describe('Missing values', () => {
-  //   it('Checking if email is provided', () => {
-  //     cy.visit(baseUrl)
-  //     cy.get('input[type="password"]').type(password)
+  //Failing due to unability to verify native prompt
+  describe('Missing values', () => {
+    it('Checking if email is provided', () => {
+      cy.visit(baseUrl)
+      cy.get('input[type="password"]').type(password)
     
-  //     cy.get('#sign-in').click()
-  //     cy.contains('Please fill this field').should('be.visible')
+      cy.get('#sign-in').click()
+      cy.contains('Please fill this field').should('be.visible')
 
-  //   })
-  // })
+    })
+  })
 })
